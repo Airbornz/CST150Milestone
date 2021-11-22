@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Milestone_Project
 {
-    public partial class Form1 : Form
+    public partial class formMain : Form
     {
-        public Form1()
+        public formMain()
         {
             InitializeComponent();
             invTable.RowCount++;
@@ -22,19 +22,20 @@ namespace Milestone_Project
             invTable.Controls.Add(new Label() { Text = "Price"});
             invTable.Controls.Add(new Label() { Text = "Cost"});
 
-            addRow("HDMI Cable", 1, 7, 7.99, 2.54);
-            addRow("USB Cable", 2, 3, 5.99, 1.02);
-            addRow("DVI Cable", 3, 8, 10.99, 7.89);
+            InventoryItem item1 = new InventoryItem("Apple", 036000291452, 2141543, 2, 1, .5);
+            InventoryItem item2 = new InventoryItem("Orange", 036000291453, 2141543, 2, 1, .5);
+            addRow(item1);
+            addRow(item2);
         }
 
-        private void addRow(String name, int sku, int qty, double price, double cost)
+        private void addRow(InventoryItem item)
         {
             invTable.RowCount++;
-            invTable.Controls.Add(new Label() { Text = name });
-            invTable.Controls.Add(new Label() { Text = sku.ToString() });
-            invTable.Controls.Add(new Label() { Text = qty.ToString() });
-            invTable.Controls.Add(new Label() { Text = "$" + price.ToString() });
-            invTable.Controls.Add(new Label() { Text = "$" + cost.ToString() });
+            invTable.Controls.Add(new Label() { Text = item.getName() });
+            invTable.Controls.Add(new Label() { Text = item.getSKU().ToString() });
+            invTable.Controls.Add(new Label() { Text = item.getQuantity().ToString() });
+            invTable.Controls.Add(new Label() { Text = "$" + item.getPrice().ToString() });
+            invTable.Controls.Add(new Label() { Text = "$" + item.getCost().ToString() });
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -53,6 +54,11 @@ namespace Milestone_Project
         {
             Form form = new Remove_Item();
             form.Show();
+        }
+
+        private void formMain_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

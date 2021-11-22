@@ -3,11 +3,12 @@
 public class InventoryItem
 {
 
-	private int upc, sku, qty;
+	private long upc;
+	private int sku, qty;
 	private double price, cost;
 	private String name;
 
-	public InventoryItem(String name, int upc, int sku, int qty, double price, double cost)
+	public InventoryItem(String name, long upc, int sku, int qty, double price, double cost)
 	{
 		this.name = name;
 		this.upc = upc;
@@ -21,7 +22,7 @@ public class InventoryItem
 		return name;
 	}
 
-	public int getUPC() {
+	public long getUPC() {
 		return upc;
 	}
 
@@ -45,7 +46,7 @@ public class InventoryItem
 		this.name = name;
 	}
 
-	public void setUPC(int upc) {
+	public void setUPC(long upc) {
 		this.upc = upc;
 	}
 
@@ -61,7 +62,7 @@ public class InventoryItem
 		this.cost = cost;
 	}
 
-	public void editItem(String name, int upc, int qty, double price, double cost) {
+	public void editItem(String name, long upc, int qty, double price, double cost) {
 		this.name = name;
 		this.upc = upc;
 		this.qty = qty;

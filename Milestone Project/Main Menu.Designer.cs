@@ -1,7 +1,7 @@
 ﻿
 namespace Milestone_Project
 {
-    partial class Form1
+    partial class formMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -118,15 +118,16 @@ namespace Milestone_Project
             this.invTable.Size = new System.Drawing.Size(776, 358);
             this.invTable.TabIndex = 1;
             // 
-            // Form1
+            // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.invTable);
             this.Controls.Add(this.navbar);
-            this.Name = "Form1";
+            this.Name = "formMain";
             this.Text = "Inventory - Main Menu";
+            this.Load += new System.EventHandler(this.formMain_Load);
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.ResumeLayout(false);
